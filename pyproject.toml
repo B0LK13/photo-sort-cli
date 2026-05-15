@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "photo-sort-cli"
+version = "0.1.0"
+description = "Sort photos and videos into folders by date using EXIF, filenames, or file timestamps."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Photo Sort Contributors"},
+]
+keywords = ["photo", "exif", "organize", "sort", "images", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "Pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+photo-sort = "photo_sort.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/wjbol/photo-sort-cli"
+Issues = "https://github.com/wjbol/photo-sort-cli/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/photo_sort"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
