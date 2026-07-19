@@ -24,6 +24,17 @@ cd photo-sort-cli
 pip install .
 ```
 
+For reproducible local development, use the committed `uv.lock`:
+
+```bash
+uv sync                 # installs exactly what's in uv.lock
+uv run pytest tests/ -v
+```
+
+(CI intentionally keeps installing via plain `pip install -e ".[dev]"` across its Python 3.9-3.12 matrix,
+since a single lockfile can't represent 4 independent resolutions — `uv.lock` is for reproducible local
+dev, not the version-compatibility matrix.)
+
 ## Usage
 
 ```bash
