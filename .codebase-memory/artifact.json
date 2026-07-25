@@ -1,0 +1,11 @@
+{
+    "schema_version": 1,
+    "commit": "3605a771753bed1f983956e4b063a256d001f3f5",
+    "indexed_at": "2026-07-25T07:08:23Z",
+    "project": "mnt-d-file-organizing-projects-photo-sort-cli",
+    "nodes": 156,
+    "edges": 226,
+    "original_size": 1376256,
+    "compressed_size": 93945,
+    "compression_level": 9
+}
